@@ -1,0 +1,28 @@
+{
+    "name": "prllxtchz/authorization",
+    "description": "Roles & Permission management with Laravel user module",
+    "type": "library",
+    "require": {
+        "spatie/laravel-permission": "^2.12"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Namal Attanayake",
+            "email": "namal@parallax.lk"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Prllxtchz\\Authorization\\" : "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PrllxTchz\\Authorization\\AuthorizationServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}
