@@ -1,8 +1,10 @@
-#Publishing vendors
+# Publishing vendors
 
-## Permission vendors
+```sh
 php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="migrations"
+```
 
-## Authorization vendors
-### running all publishes such as views, migrations & seeds
+running all publishes such as views, migrations & seeds
+```sh
 php artisan vendor:publish --provider="Prllxtchz\Authorization\AuthorizationServiceProvider"
+```
