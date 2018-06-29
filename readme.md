@@ -1,4 +1,4 @@
-<p align="center"><a href="https://parallax.lk" target="_blank"><img src="http://parallax.lk/img/logo.png" height="30px"></a></p>
+<a href="https://parallax.lk" target="_blank"><img src="http://parallax.lk/img/logo.png" height="50px"></a>
 
 [![Latest Stable Version](https://poser.pugx.org/prllxtchz/authorization/v/stable)](https://packagist.org/packages/prllxtchz/authorization)
 [![Total Downloads](https://poser.pugx.org/prllxtchz/authorization/downloads)](https://packagist.org/packages/prllxtchz/authorization)
