@@ -7,21 +7,21 @@
 
 # Adding User & User Role CRUD to Laravel Project
 
-### Publishing vendors
-
+Install package from following command.
 ```
 composer require prllxtchz/authorization
 ```
 
+Publish permission package migrations & config file to project. 
 ```bash
-php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" 
 ```
 
-running all publishes such as views, migrations & seeds
+running authorization package views, migrations & seeds to project.
 ```bash
 php artisan vendor:publish --provider="Prllxtchz\Authorization\AuthorizationServiceProvider"
 ```
-Then ` php artisan make:auth ` and add ` use HasRoles; ` to User model. 
+Then run ` php artisan make:auth ` and add ` use HasRoles; ` to User model. 
 
 Before run any migrations, update database/seeds/DatabaseSeeder.php file with following,
 
