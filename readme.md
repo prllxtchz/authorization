@@ -21,7 +21,11 @@ running authorization package views, migrations & seeds to project.
 ```bash
 php artisan vendor:publish --provider="Prllxtchz\Authorization\AuthorizationServiceProvider"
 ```
-Then run ` php artisan make:auth ` and add ` use HasRoles; ` to User model. 
+Then run
+``` php artisan make:auth ```
+ 
+ and add HasRoles trait to User model.
+  ``` use HasRoles; ``` . 
 [https://github.com/spatie/laravel-permission#usage](https://github.com/spatie/laravel-permission#usage)
 
 ```
