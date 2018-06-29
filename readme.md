@@ -28,7 +28,7 @@ php artisan make:auth
  
  and add HasRoles trait to User model.
 ```
-use HasRoles;
+use Spatie\Permission\Traits\HasRoles;
 ``` 
 [https://github.com/spatie/laravel-permission#usage](https://github.com/spatie/laravel-permission#usage)
 
@@ -51,9 +51,12 @@ $this->call(UserRolePermissionSeed::class);
 $this->call(GiveAllPermissionsToAdmin::class);
 ```
 
-Then you can run all migrations.
+Then you can run all migrations with seeds.
+
+You may need to run `composer dump-autload` before run migrations.
+
 ```bash
-php artisan migrate 
+php artisan migrate --seed
 ```
 ## Usage
 ### Admin login detail which has all current permissions
