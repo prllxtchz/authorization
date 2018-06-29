@@ -1,66 +1,14 @@
 @extends('layouts.app')
 
-@section('theme_js')
-    <!-- Theme JS files -->
-    <script type="text/javascript" src="{{ asset('limitless/js/plugins/forms/styling/uniform.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('limitless/js/plugins/forms/styling/switchery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('limitless/js/plugins/forms/styling/switch.min.js') }}"></script>
-
-    <script type="text/javascript" src="{{ asset('limitless/js/core/libraries/jquery_ui/interactions.min.js') }}"></script>
-
-    <script type="text/javascript" src="{{ asset('limitless/js/core/app.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('limitless/js/pages/form_checkboxes_radios.js') }}"></script>
-
-    <script type="text/javascript" src="{{ asset('limitless/js/plugins/ui/ripple.min.js') }}"></script>
-    <!-- /theme JS files -->
-
-@endsection
-
-
-
 @section('content')
 
-    <div class="page-container">
+    <div class="container">
 
         <!-- Page content -->
         <div class="page-content">
 
-            <!-- Main sidebar -->
-        @include('layouts.sidebar')
-
-
-        <!-- Main content -->
+            <!-- Main content -->
             <div class="content-wrapper">
-
-                <!-- Page header -->
-                <div class="page-header page-header-default">
-                    <div class="page-header-content">
-                        <div class="page-title">
-                            <h4>
-                                <i class="icon-arrow-left52 position-left"></i>
-                                <span class="text-semibold">Home</span>
-                                - Roles
-                            </h4>
-                        </div>
-
-                        <div class="heading-elements">
-                            <div class="heading-btn-group">
-                                <a href="/roles" class="btn btn-link btn-float text-size-small has-text"><i class="icon-list text-primary"></i><span>View All Roles</span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="breadcrumb-line">
-                        <ul class="breadcrumb">
-                            <li>
-                                <a href="index.html"><i class="icon-home2 position-left"></i> Home</a>
-                            </li>
-                            <li class="active">Roles</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- /page header -->
-
 
                 <!-- Content area -->
                 <div class="content">
@@ -87,19 +35,6 @@
                             <div class="panel panel-flat border-top-info border-bottom-info">
                                 <div class="panel-heading">
                                     <h5 class="panel-title">Add New Role</h5>
-                                    <div class="heading-elements">
-                                        <ul class="icons-list">
-                                            <li>
-                                                <a data-action="collapse"></a>
-                                            </li>
-                                            <li>
-                                                <a data-action="reload"></a>
-                                            </li>
-                                            <li>
-                                                <a data-action="close"></a>
-                                            </li>
-                                        </ul>
-                                    </div>
                                 </div>
                                 <div class="panel-body">
                                     <form class="form-horizontal" method="POST" action="{{ route('roles.store') }}">
@@ -115,7 +50,7 @@
                                             </div>
                                         </fieldset>
 
-                                        {{--{{(old('role_permissions')}}--}}
+                                        {{old('role_permissions')}}
 
                                         <div class="table-responsive">
                                             <table class="table table-bordered table-xs">
@@ -188,10 +123,6 @@
 
                         </div>
                     </div>
-
-                    <!-- Footer -->
-                @include('layouts.footer')
-                <!-- /footer -->
 
                 </div>
                 <!-- /content area -->

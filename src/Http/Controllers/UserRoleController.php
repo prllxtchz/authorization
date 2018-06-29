@@ -4,10 +4,10 @@ namespace PrllxTchz\Authorization\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\UnauthorizedException;
-use Modules\RolesAndPermissions\Facades\RolesAndPermissionsFacade;
-use Modules\RolesAndPermissions\Http\Requests\AddUserRoleRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Prllxtchz\Authorization\Facades\AuthorizationFacade;
+use Prllxtchz\Authorization\Http\Requests\AddUserRoleRequest;
 use Spatie\Permission\Exceptions\RoleAlreadyExists;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -41,7 +41,7 @@ class UserRoleController extends Controller
 
         $permissions = Permission::all();
 
-        $grouped_permissions = RolesAndPermissionsFacade::getGroupedPermissions($permissions);
+        $grouped_permissions = AuthorizationFacade::getGroupedPermissions($permissions);
 
         return view('roles.create', ['permissions' => $grouped_permissions]);
     }
@@ -101,7 +101,7 @@ class UserRoleController extends Controller
         $role = Role::findOrFail($id);
         $permissions = Permission::all();
 
-        $grouped_permissions = RolesAndPermissionsFacade::getGroupedPermissions($permissions);
+        $grouped_permissions = AuthorizationFacade::getGroupedPermissions($permissions);
 
         $role_permissions = $role->permissions->toArray();
 

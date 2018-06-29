@@ -23,8 +23,8 @@ class GiveAllPermissionsToAdmin extends Seeder
 
         //Temp add namal@parallax.lk to Admin
         $admin_user = User::create([
-            'name'     => 'Namal',
-            'email'    => 'namal@parallax.lk',
+            'name'     => 'Admin',
+            'email'    => 'admin@parallax.lk',
             'password' => bcrypt('@parallax<>')
         ]);
         $admin_user->assignRole($role);

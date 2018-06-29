@@ -1,36 +1,14 @@
 @extends('layouts.app')
 
-@section('theme_js')
-    <!-- Theme JS files -->
-    <script type="text/javascript" src="{{ asset('limitless/js/plugins/forms/styling/uniform.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('limitless/js/plugins/forms/styling/switchery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('limitless/js/plugins/forms/styling/switch.min.js') }}"></script>
-
-    <script type="text/javascript"
-            src="{{ asset('limitless/js/core/libraries/jquery_ui/interactions.min.js') }}"></script>
-
-    <script type="text/javascript" src="{{ asset('limitless/js/core/app.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('limitless/js/pages/form_checkboxes_radios.js') }}"></script>
-
-    <script type="text/javascript" src="{{ asset('limitless/js/plugins/ui/ripple.min.js') }}"></script>
-    <!-- /theme JS files -->
-
-@endsection
-
-
 
 @section('content')
 
-    <div class="page-container">
+    <div class="container">
 
         <!-- Page content -->
         <div class="page-content">
 
-            <!-- Main sidebar -->
-        @include('layouts.sidebar')
-
-
-        <!-- Main content -->
+            <!-- Main content -->
             <div class="content-wrapper">
 
                 <!-- Page header -->
@@ -47,13 +25,6 @@
                                             class="icon-list text-primary"></i><span>View All Roles</span></a>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="breadcrumb-line">
-                        <ul class="breadcrumb">
-                            <li><a href="index.html"><i class="icon-home2 position-left"></i> Home</a></li>
-                            <li class="active">Roles</li>
-                        </ul>
                     </div>
                 </div>
                 <!-- /page header -->
@@ -93,17 +64,10 @@
                             <div class="panel panel-flat border-top-info border-bottom-info">
                                 <div class="panel-heading">
                                     <h5 class="panel-title">Update Role</h5>
-                                    <div class="heading-elements">
-                                        <ul class="icons-list">
-                                            <li><a data-action="collapse"></a></li>
-                                            <li><a data-action="reload"></a></li>
-                                            <li><a data-action="close"></a></li>
-                                        </ul>
-                                    </div>
                                 </div>
                                 <div class="panel-body">
                                     <form class="form-horizontal" method="POST"
-                                          action="{{ route('roles.update', ['id' => $role->id]) }}">
+                                            action="{{ route('roles.update', ['id' => $role->id]) }}">
                                         {{ csrf_field() }}
 
                                         {{ method_field('PUT') }}
@@ -113,7 +77,7 @@
                                                 <label class="control-label col-md-2">Role Name</label>
                                                 <div class="col-md-4">
                                                     <input type="text" class="form-control"
-                                                           value="{{$role->name}}" name="role_name">
+                                                            value="{{$role->name}}" name="role_name">
                                                 </div>
                                             </div>
 
@@ -196,9 +160,6 @@
                         </div>
                     </div>
 
-                    <!-- Footer -->
-                @include('layouts.footer')
-                <!-- /footer -->
 
                 </div>
                 <!-- /content area -->

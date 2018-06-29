@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\RolesAndPermissions\Http\Requests;
+namespace Prllxtchz\Authorization\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -13,7 +13,7 @@ class AddUserRoleRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return $this->user()->can('CREATE USER_ROLE');
     }
 
     /**

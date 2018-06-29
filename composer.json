@@ -21,7 +21,10 @@
         "laravel": {
             "providers": [
                 "Prllxtchz\\Authorization\\AuthorizationServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "AuthorizationFacade" : "Prllxtchz\\Authorization\\Facades"
+            }
         }
     },
     "minimum-stability": "dev"
