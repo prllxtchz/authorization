@@ -21,11 +21,15 @@ running authorization package views, migrations & seeds to project.
 ```bash
 php artisan vendor:publish --provider="Prllxtchz\Authorization\AuthorizationServiceProvider"
 ```
-Then run
-``` php artisan make:auth ```
+Then run Laravel auth command to generate auth files.
+```
+php artisan make:auth
+```
  
  and add HasRoles trait to User model.
-  ``` use HasRoles; ``` . 
+```
+use HasRoles;
+``` 
 [https://github.com/spatie/laravel-permission#usage](https://github.com/spatie/laravel-permission#usage)
 
 ```
