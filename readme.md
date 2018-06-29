@@ -7,7 +7,7 @@
 
 # Adding User & User Role CRUD to Laravel Project
 
-Install package from following command.
+## Installation
 ```
 composer require prllxtchz/authorization
 ```
@@ -22,6 +22,18 @@ running authorization package views, migrations & seeds to project.
 php artisan vendor:publish --provider="Prllxtchz\Authorization\AuthorizationServiceProvider"
 ```
 Then run ` php artisan make:auth ` and add ` use HasRoles; ` to User model. 
+[https://github.com/spatie/laravel-permission#usage](https://github.com/spatie/laravel-permission#usage)
+
+```
+use Spatie\Permission\Traits\HasRoles;
+
+class User extends Authenticatable
+{
+    use HasRoles;
+
+    // ...
+}
+```
 
 Before run any migrations, update database/seeds/DatabaseSeeder.php file with following,
 
@@ -35,7 +47,7 @@ Then you can run all migrations.
 ```bash
 php artisan migrate 
 ```
-
+## Usage
 ### Admin login detail which has all current permissions
 ```
 Name: Admin
@@ -43,3 +55,6 @@ Email: admin@parallax.lk
 Password: @parallax<>
 ```
 
+### Generated routes
+/users
+/routes
