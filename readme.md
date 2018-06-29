@@ -9,6 +9,10 @@
 
 ### Publishing vendors
 
+```
+composer require prllxtchz/authorization
+```
+
 ```bash
 php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="migrations"
 ```
