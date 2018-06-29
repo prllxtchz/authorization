@@ -1,3 +1,6 @@
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/prllxtchz/authorization.svg?style=flat-square)](https://packagist.org/packages/prllxtchz/authorization)
+[![Total Downloads](https://img.shields.io/packagist/dt/prllxtchz/authorization.svg?style=flat-square)](https://packagist.org/packages/prllxtchz/authorization)
+
 ### Publishing vendors
 
 ```bash
