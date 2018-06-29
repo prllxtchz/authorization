@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\RolesAndPermissions\Http\Controllers;
+namespace Prllxtchz\Authorization\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;

@@ -1,5 +1,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/prllxtchz/authorization.svg?style=flat-square)](https://packagist.org/packages/prllxtchz/authorization)
-[![Total Downloads](https://img.shields.io/packagist/dt/prllxtchz/authorization.svg?style=flat-square)](https://packagist.org/packages/prllxtchz/authorization)
+[![Total Downloads](https://img.shields.io/github/downloads/atom/atom/total.svg)](https://packagist.org/packages/prllxtchz/authorization)
+
+# Adding User & User Role CRUD to Laravel Project
 
 ### Publishing vendors
 
@@ -27,9 +29,9 @@ php artisan migrate
 ```
 
 ### Admin login detail which has all current permissions
-
->Name: Admin
->Email: admin@parallax.lk
->Password: @parallax<>
-
+```
+Name: Admin
+Email: admin@parallax.lk
+Password: @parallax<>
+```
 
