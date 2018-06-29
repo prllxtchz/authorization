@@ -20,7 +20,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "PrllxTchz\\Authorization\\AuthorizationServiceProvider"
+                "Prllxtchz\\Authorization\\AuthorizationServiceProvider"
             ]
         }
     },

@@ -1,4 +1,4 @@
-# Publishing vendors
+## Publishing vendors
 
 ```sh
 php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="migrations"
