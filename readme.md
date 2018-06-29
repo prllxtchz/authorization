@@ -1,28 +1,32 @@
-## Publishing vendors
+### Publishing vendors
 
-```sh
+```bash
 php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="migrations"
 ```
 
 running all publishes such as views, migrations & seeds
-```sh
+```bash
 php artisan vendor:publish --provider="Prllxtchz\Authorization\AuthorizationServiceProvider"
 ```
-
-Add ``` use HasRoles; ``` to User model.
+Then ` php artisan make:auth ` and add ` use HasRoles; ` to User model. 
 
 Before run any migrations, update database/seeds/DatabaseSeeder.php file with following,
 
-```
+```bash
 $this->call(UserPermissionSeed::class);
 $this->call(UserRolePermissionSeed::class);
 $this->call(GiveAllPermissionsToAdmin::class);
 ```
 
-## Admin login detail which has all current permissions
+Then you can run all migrations.
+```bash
+php artisan migrate 
 ```
-Name: Admin
-Email: admin@parallax.lk
-Password: @parallax<>
-```
+
+### Admin login detail which has all current permissions
+
+>Name: Admin
+>Email: admin@parallax.lk
+>Password: @parallax<>
+
 
