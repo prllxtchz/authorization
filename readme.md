@@ -12,7 +12,7 @@ Install package from following command.
 composer require prllxtchz/authorization
 ```
 
-Publish permission package migrations & config file to project. 
+Publish [Spatie\Permission](https://github.com/spatie/laravel-permission) package migrations & config file to project. 
 ```bash
 php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" 
 ```
