@@ -1,5 +1,9 @@
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/prllxtchz/authorization.svg?style=flat-square)](https://packagist.org/packages/prllxtchz/authorization)
-[![Total Downloads](https://img.shields.io/github/downloads/atom/atom/total.svg)](https://packagist.org/packages/prllxtchz/authorization)
+<p align="center"><a href="https://parallax.lk" target="_blank"><img src="http://parallax.lk/img/logo.png" height="30px"></a></p>
+
+[![Latest Stable Version](https://poser.pugx.org/prllxtchz/authorization/v/stable)](https://packagist.org/packages/prllxtchz/authorization)
+[![Total Downloads](https://poser.pugx.org/prllxtchz/authorization/downloads)](https://packagist.org/packages/prllxtchz/authorization)
+[![Latest Unstable Version](https://poser.pugx.org/prllxtchz/authorization/v/unstable)](https://packagist.org/packages/prllxtchz/authorization)
+[![License](https://poser.pugx.org/prllxtchz/authorization/license)](https://packagist.org/packages/prllxtchz/authorization)
 
 # Adding User & User Role CRUD to Laravel Project
 
