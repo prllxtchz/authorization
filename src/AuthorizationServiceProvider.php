@@ -17,6 +17,12 @@ class AuthorizationServiceProvider extends ServiceProvider
             __DIR__ . '/database/migrations' => database_path('migrations'),
             __DIR__ . '/database/seeds' => database_path('seeds'),
         ]);
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                GenerateRolesAndPermissionsModule::class,
+            ]);
+        }
     }
 
     public function register()
