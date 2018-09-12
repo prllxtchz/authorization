@@ -22,7 +22,7 @@ class AuthorizationServiceProvider extends ServiceProvider
 
         if (!class_exists('CreateScreenTables')) {
             $this->publishes([
-                __DIR__ . '/database/migrations/create_screen_tables.php' => $this->app->databasePath() . "/migrations/{$timestamp}_create_screen_tables.php",
+                __DIR__ . '/database/migrations/create_screen_tables.php.stub' => $this->app->databasePath() . "/migrations/{$timestamp}_create_screen_tables.php",
             ], 'migrations');
         }
 
