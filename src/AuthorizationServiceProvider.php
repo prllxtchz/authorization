@@ -15,7 +15,7 @@ class AuthorizationServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__ . '/views' => resource_path('views'),
-            __DIR__ . '/database/seeds' => database_path('seeds'),
+            __DIR__ . '/config/authorization.php' => config_path('authorization.php'),
         ]);
 
         $timestamp = date('Y_m_d_His', time());

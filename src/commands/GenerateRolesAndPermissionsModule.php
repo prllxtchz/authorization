@@ -70,12 +70,16 @@ class GenerateRolesAndPermissionsModule extends Command
             $role = Role::create(['name' => 'Super Admin']);
 
             $this->comment('Giving all permissions to role Super Admin.');
-            $all_permissions = Permission::all();
 
-            $bar = $this->output->createProgressBar(count($all_permissions));
+            // Adding all permissions and assigning to super admin
+            $default_permissions = config('authorization.default_permissions');
 
-            foreach ($all_permissions as $permission) {
-                $role->givePermissionTo($permission->name);
+            $bar = $this->output->createProgressBar(count($default_permissions));
+
+            foreach ($default_permissions as $permission) {
+                Permission::create(['name' => $permission, 'screen_id' => 1]);
+                $role->givePermissionTo($permission);
+                $this->comment('Permission ' . $permission. ' created.');
                 $bar->advance();
             }
             $bar->finish();
