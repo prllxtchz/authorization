@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddScreenTables extends Migration
+class CreateScreenTables extends Migration
 {
     /**
      * Run the migrations.
@@ -47,8 +47,6 @@ class AddScreenTables extends Migration
                 ->references('id')
                 ->on('screens')
                 ->onDelete('cascade');
-
-            $table->timestamps();
         });
 
     }
