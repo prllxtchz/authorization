@@ -52,11 +52,12 @@ class GenerateRolesAndPermissionsModule extends Command
 
         $this->call('make:auth');
         $this->call('migrate');
-        $this->call('db:seed');
+        $this->call('db:seed --class=UserPermissionSeed');
+        $this->call('db:seed --class=UserRolePermissionSeed');
 
         $this->info('====================================');
 
-        $this->error('Please add "use HasRoles" in User module before proceed....');
+        $this->error('Please add "use HasRoles" in User Model before proceed....');
         $this->comment('Link: https://github.com/spatie/laravel-permission#usage');
 
         if ($this->confirm('Did you add "use HasRoles" trait?')) {
