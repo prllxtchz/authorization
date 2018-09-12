@@ -12,11 +12,19 @@ class AuthorizationServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/views', 'authorization');
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
 
+
         $this->publishes([
             __DIR__ . '/views' => resource_path('views'),
-            __DIR__ . '/database/migrations' => database_path('migrations'),
             __DIR__ . '/database/seeds' => database_path('seeds'),
         ]);
+
+        $timestamp = date('Y_m_d_His', time());
+
+        if (!class_exists('CreateScreenTables')) {
+            $this->publishes([
+                __DIR__ . '/database/migrations/create_screen_tables.php' => $this->app->databasePath() . "/migrations/{$timestamp}_create_screen_tables.php",
+            ], 'migrations');
+        }
 
         if ($this->app->runningInConsole()) {
             $this->commands([
