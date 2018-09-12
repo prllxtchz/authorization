@@ -14,14 +14,14 @@ class GenerateRolesAndPermissionsModule extends Command
      *
      * @var string
      */
-    protected $signature = 'parallax:generate:roles';
+    protected $signature = 'parallax:install';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Generate Role and Permission module';
+    protected $description = 'Generate Roles module, run migrations & seeds, make:auth and creating admin user';
 
     /**
      * Create a new command instance.
@@ -86,6 +86,8 @@ class GenerateRolesAndPermissionsModule extends Command
             $admin_user->assignRole($role);
             $this->info('Successfully assigned ' . $sys_admin_name . ' as Super Admin.');
             $this->info('Successfully installed Roles & Permission module ');
+            $this->info('====================================');
+            $this->info('');
             $this->comment('You may login now with given login details.');
 
         } else {
