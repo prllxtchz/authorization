@@ -2,7 +2,6 @@
 
 [![Latest Stable Version](https://poser.pugx.org/prllxtchz/authorization/v/stable)](https://packagist.org/packages/prllxtchz/authorization)
 [![Total Downloads](https://poser.pugx.org/prllxtchz/authorization/downloads)](https://packagist.org/packages/prllxtchz/authorization)
-[![Latest Unstable Version](https://poser.pugx.org/prllxtchz/authorization/v/unstable)](https://packagist.org/packages/prllxtchz/authorization)
 [![License](https://poser.pugx.org/prllxtchz/authorization/license)](https://packagist.org/packages/prllxtchz/authorization)
 
 # Adding User & User Role CRUD to Laravel Project
