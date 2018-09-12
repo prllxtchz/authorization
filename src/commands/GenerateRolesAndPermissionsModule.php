@@ -51,9 +51,8 @@ class GenerateRolesAndPermissionsModule extends Command
         ]);
 
         $this->call('make:auth');
-        $this->call('migrate', [
-            '--seed' => TRUE
-        ]);
+        $this->call('migrate');
+        $this->call('db:seed');
 
         $this->info('====================================');
 
