@@ -26,11 +26,11 @@ class AuthorizationServiceProvider extends ServiceProvider
             ], 'migrations');
         }
 
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-                GenerateRolesAndPermissionsModule::class,
-            ]);
-        }
+//        if ($this->app->runningInConsole()) {
+//            $this->commands([
+//                GenerateRolesAndPermissionsModule::class,
+//            ]);
+//        }
     }
 
     public function register()

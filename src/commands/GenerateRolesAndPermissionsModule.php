@@ -2,10 +2,9 @@
 
 namespace Prllxtchz\Authorization;
 
-use App\User;
 use Illuminate\Console\Command;
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
+use PrllxTchz\Authorization\Jobs\DefaultPermissionsInstaller;
+use PrllxTchz\Authorization\Jobs\SuperAdminGenerator;
 
 class GenerateRolesAndPermissionsModule extends Command
 {
@@ -42,16 +41,16 @@ class GenerateRolesAndPermissionsModule extends Command
     {
         $this->info('Generating Roles & Permission module ');
 
-        $this->call('vendor:publish', [
-            '--provider' => 'Spatie\Permission\PermissionServiceProvider'
-        ]);
-
-        $this->call('vendor:publish', [
-            '--provider' => 'Prllxtchz\Authorization\AuthorizationServiceProvider'
-        ]);
-
-        $this->call('make:auth');
-        $this->call('migrate');
+//        $this->call('vendor:publish', [
+//            '--provider' => 'Spatie\Permission\PermissionServiceProvider'
+//        ]);
+//
+//        $this->call('vendor:publish', [
+//            '--provider' => 'Prllxtchz\Authorization\AuthorizationServiceProvider'
+//        ]);
+//
+//        $this->call('make:auth');
+//        $this->call('migrate');
 
         $this->info('====================================');
 
@@ -67,31 +66,42 @@ class GenerateRolesAndPermissionsModule extends Command
 
             $this->comment('Creating Super Admin role.');
 
-            $role = Role::create(['name' => 'Super Admin']);
+            $super_admin_role_name = $this->choice('What is the role name of Super Admin?', ['Super Admin', 'System Admin'], 0);
 
-            $this->comment('Giving all permissions to role Super Admin.');
+            $this->comment('Giving all permissions to role '. $super_admin_role_name);
 
             // Adding all permissions and assigning to super admin
-            $default_permissions = config('authorization.default_permissions');
+//            $default_permissions = config('authorization.default_permissions');
 
-            $bar = $this->output->createProgressBar(count($default_permissions));
+//            $bar = $this->output->createProgressBar(count($default_permissions));
+//
+//            foreach ($default_permissions as $permission) {
+//                Permission::create(['name' => $permission, 'screen_id' => 1]);
+//                $role->givePermissionTo($permission);
+//                $this->comment('Permission ' . $permission. ' created.');
+//                $bar->advance();
+//            }
+//            $bar->finish();
 
-            foreach ($default_permissions as $permission) {
-                Permission::create(['name' => $permission, 'screen_id' => 1]);
-                $role->givePermissionTo($permission);
-                $this->comment('Permission ' . $permission. ' created.');
-                $bar->advance();
-            }
-            $bar->finish();
 
-            $this->comment('Assigning ' . $sys_admin_name . ' as Super Admin.');
-            $admin_user = User::create([
-                'name' => $sys_admin_name,
-                'email' => $sys_admin_email,
-                'password' => bcrypt($sys_admin_pwd)
-            ]);
-            $admin_user->assignRole($role);
-            $this->info('Successfully assigned ' . $sys_admin_name . ' as Super Admin.');
+            $default_permissions_installer = new DefaultPermissionsInstaller;
+            $default_permissions_installer->create_default_permissions();
+
+            $super_admin_generator = new SuperAdminGenerator;
+            $super_admin_generator->create_admin_user($sys_admin_name, $sys_admin_email, $sys_admin_pwd);
+
+            $this->comment('Assigning ' . $sys_admin_name . ' as ' . $super_admin_role_name);
+            $super_admin_generator->generate_super_admin($super_admin_role_name);
+
+
+//            $admin_user = User::create([
+//                'name' => $sys_admin_name,
+//                'email' => $sys_admin_email,
+//                'password' => bcrypt($sys_admin_pwd)
+//            ]);
+//            $admin_user->assignRole($role);
+
+            $this->info('Successfully assigned ' . $sys_admin_name . ' as ' . $super_admin_role_name);
             $this->info('Successfully installed Roles & Permission module ');
             $this->info('====================================');
             $this->info('');
