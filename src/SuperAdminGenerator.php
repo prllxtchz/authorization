@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: namal
- * Date: 9/13/18
- * Time: 3:09 PM
- */
 
-namespace PrllxTchz\Authorization\Jobs;
+namespace PrllxTchz\Authorization;
 
 use App\User;
 use Spatie\Permission\Models\Permission;

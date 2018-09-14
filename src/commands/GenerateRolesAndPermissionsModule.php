@@ -3,8 +3,6 @@
 namespace Prllxtchz\Authorization;
 
 use Illuminate\Console\Command;
-use PrllxTchz\Authorization\Jobs\DefaultPermissionsInstaller;
-use PrllxTchz\Authorization\Jobs\SuperAdminGenerator;
 
 class GenerateRolesAndPermissionsModule extends Command
 {

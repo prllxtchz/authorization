@@ -1,6 +1,6 @@
 <?php
 
-namespace PrllxTchz\Authorization\Jobs;
+namespace PrllxTchz\Authorization;
 
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Permission;
