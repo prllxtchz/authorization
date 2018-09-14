@@ -20,7 +20,7 @@ class CreateScreenTables extends Migration
          */
         Schema::create('modules', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->nullable();
+            $table->string('name')->unique();
             $table->integer('order', FALSE, TRUE)->nullable();
             $table->unsignedTinyInteger('active', FALSE)->default(1);
             $table->timestamps();
@@ -28,7 +28,7 @@ class CreateScreenTables extends Migration
 
         Schema::create('screens', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->integer('order', FALSE, TRUE)->nullable();
             $table->unsignedTinyInteger('active', FALSE)->default(1);
 

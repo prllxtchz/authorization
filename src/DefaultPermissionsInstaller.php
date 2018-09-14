@@ -11,22 +11,34 @@ class DefaultPermissionsInstaller
     {
         $default_modules = config('authorization.default_modules');
 
+        if (!$default_modules) {
+            throw new \Exception('No default modules found.');
+        }
+
         // Looping through all modules and inserts in screens
         foreach ($default_modules as $default_module) {
-            $module_id = $this->insert_module_data($default_modules['name'], $default_modules['order']);
+            $module_id = $this->insert_module_data($default_module['name'], $default_module['order']);
 
-            foreach ($default_module['screens'] as $screen) {
-                $screen_id = $this->insert_screen_data($screen['name'], $screen['order'], $module_id);
+            if ($module_id) {
+                foreach ($default_module['screens'] as $screen) {
+                    $screen_id = $this->insert_screen_data($screen['name'], $screen['order'], $module_id);
 
-                if ($screen['permissions'] === '*') {
-                    $this->insert_all_permissions($screen_id, $screen['name']);
-                } else {
-                    $actions = explode('|', $screen['permissions']);
+                    if ($screen_id) {
+                        if ($screen['permissions'] === '*') {
+                            $this->insert_all_permissions($screen_id, $screen['name']);
+                        } else {
+                            $actions = explode('|', $screen['permissions']);
 
-                    $this->insert_permissions($screen_id, $screen['name'], $actions);
+                            $this->insert_permissions($screen_id, $screen['name'], $actions);
+                        }
+                    } else {
+                        throw new \Exception('Screen ID not found');
+                    }
                 }
-
+            } else {
+                throw new \Exception('Module ID not found');
             }
+
         }
     }
 
