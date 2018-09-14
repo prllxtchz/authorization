@@ -39,14 +39,14 @@ class GenerateRolesAndPermissionsModule extends Command
     {
         $this->info('Generating Roles & Permission module ');
 
-//        $this->call('vendor:publish', [
-//            '--provider' => 'Spatie\Permission\PermissionServiceProvider'
-//        ]);
-//
-//        $this->call('vendor:publish', [
-//            '--provider' => 'Prllxtchz\Authorization\AuthorizationServiceProvider'
-//        ]);
-//
+        $this->call('vendor:publish', [
+            '--provider' => 'Spatie\Permission\PermissionServiceProvider'
+        ]);
+
+        $this->call('vendor:publish', [
+            '--provider' => 'Prllxtchz\Authorization\AuthorizationServiceProvider'
+        ]);
+
         $this->call('make:auth');
         $this->call('migrate');
 
